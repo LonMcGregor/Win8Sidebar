@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<link href="main.css" type="text/css" rel="stylesheet" />
+</head>
+<body onresize="setSize()" onload="setSize()">
+<div id="sidebar">
+	<div id="linkContainer">
+		<a href="#search"><div id="l1" class="sLink clearfix">
+		</div></a>
+		<a href="#share"><div id="l2" class="sLink clearfix">
+		</div></a>
+		<a href="#start" onclick="showSideBody()"><div id="l3" class="sLink clearfix">
+		</div></a>
+		<a href="#devices"><div id="l4" class="sLink clearfix">
+		</div></a>
+		<a href="#settings"><div id="l5" class="sLink clearfix">
+		</div></a>
+	</div>
+	<div id="sideBody">
+		<h1>Text</h1>
+	</div>
+</div>
+<script type="text/javascript">
+
+function setSize(){
+	var h = window.innerHeight;
+	sidebarDims(h);
+	sidebarAligns(h);
+}
+
+function sidebarDims(h){
+	document.getElementById('sidebar').style.height=(""+h+"px");
+	
+	document.getElementById('sidebar').style.position="absolute";
+	document.getElementById('sidebar').style.right="0px";
+	document.getElementById('sidebar').style.top="0px";
+}
+function sidebarAligns(h){
+	document.getElementById('linkContainer').style.position="relative";
+	
+	var containerHeight = document.getElementById('linkContainer').clientHeight;
+	
+	var loc = ((h/2)-containerHeight/2);
+	document.getElementById('linkContainer').style.top=(""+loc+"px");
+}
+function showSideBody(){
+	document.getElementById('sideBody').style.display="block";
+}
+
+</script>
+<script type="text/javascript" src="thing.js"></script>
+
+<h1 id="1">This is a sample web page.</h1>
+<h2 id="2">This is sample text on the page.</h2>
+</body>
+</html>
