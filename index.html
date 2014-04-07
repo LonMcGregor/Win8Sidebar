@@ -19,31 +19,33 @@
 			</div></a>
 		</div>
 	</div>
-	<div id="sb1" class="sideBody">
-		<h1>Search</h1>
-		<div id="searching">
-			<input id="searchbox" placeholder="Search..." onkeydown="doSearch(event)"></input>
-		</div>
-	</div>
-	<div id="sb2" class="sideBody">
-		<h1>Share</h1>
-		<div id="shareList">
-			<div id="shareTwitter" class="shareItem">
-				<a href="#" onclick="window.location='https://twitter.com/intent/tweet?text='+window.location" class="twitter-share-button">Share on Twitter</a>
-			</div>
-			<div id="shareReddit" class="shareItem">
-				<a href="#" onclick="window.location='http://www.reddit.com/submit?title='+window.title+'&url='+window.location" class="twitter-share-button">Share on Reddit</a>
+	<div id="sbContainer">
+		<div id="sb1" class="sideBody">
+			<h1>Search</h1>
+			<div id="searching">
+				<input id="searchbox" placeholder="Search..." onkeydown="doSearch(event)"></input>
 			</div>
 		</div>
-	</div>
-	<div id="sb3" class="sideBody">
-		<h1>Site</h1>
-	</div>
-	<div id="sb4" class="sideBody">
-		<h1>Devices(?)</h1>
-	</div>
-	<div id="sb5" class="sideBody">
-		<h1>Settings</h1>
+		<div id="sb2" class="sideBody">
+			<h1>Share</h1>
+			<div id="shareList">
+				<div id="shareTwitter" class="shareItem">
+					<a href="#" onclick="window.location='https://twitter.com/intent/tweet?text='+window.location" class="twitter-share-button">Share on Twitter</a>
+				</div>
+				<div id="shareReddit" class="shareItem">
+					<a href="#" onclick="window.location='http://www.reddit.com/submit?title='+window.title+'&url='+window.location" class="twitter-share-button">Share on Reddit</a>
+				</div>
+			</div>
+		</div>
+		<div id="sb3" class="sideBody">
+			<h1>Site</h1>
+		</div>
+		<div id="sb4" class="sideBody">
+			<h1>Devices(?)</h1>
+		</div>
+		<div id="sb5" class="sideBody">
+			<h1>Settings</h1>
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -55,20 +57,25 @@ function setSize(){
 }
 
 function sidebarDims(h){
-	document.getElementById('sidebar').style.height=(""+h+"px");
-	
-	document.getElementById('sidebar').style.position="absolute";
-	document.getElementById('sidebar').style.right="0px";
-	document.getElementById('sidebar').style.top="0px";
+	var items = ["sidebar", "majorContainer", "sbContainer"];
+	for (var i = 0; i < 3; i++){
+		document.getElementById(items[i]).style.height=(""+h+"px");
+		
+		document.getElementById(items[i]).style.position="absolute";
+		document.getElementById(items[i]).style.right="0px";
+		document.getElementById(items[i]).style.top="0px";
+	}
 }
 function sidebarAligns(h){
-	document.getElementById('majorContainer').style.position="relative";
+	document.getElementById('linkContainer').style.position="relative";
 	
 	var containerHeight = document.getElementById('linkContainer').clientHeight;
 	
 	var loc = ((h/2)-containerHeight/2);
-	document.getElementById('majorContainer').style.top=(""+loc+"px");
+	document.getElementById('linkContainer').style.top=(""+loc+"px");
 }
+
+
 function showSideBody(i){
 	var toggle = document.getElementById('sb'+i).style.display;
 
@@ -77,8 +84,11 @@ function showSideBody(i){
 	}
 
 	if (toggle==="none"){
+		document.getElementById('sbContainer').style.display="block";
 		document.getElementById('sb'+i).style.display="block";
+		if(i === 3){moveElement(-240)};
 	} else {
+		document.getElementById('sbContainer').style.display="none";
 		document.getElementById('sb'+i).style.display="none";
 	}
 }
@@ -87,6 +97,16 @@ function doSearch(event){
 	var keyCode =  ('which' in event) ? event.which : event.keyCode;
 	if (keyCode===13){
 		window.location="http://duckduckgo.com/?q="+document.getElementById('searchbox').value;
+	}
+}
+
+function moveElement(r){
+	
+	if (r < 0){
+		
+	} else {
+		document.getElementById(sb3).style.right=r;
+		setTimeout(function() {moveElement(r+20);}, 100);
 	}
 }
 

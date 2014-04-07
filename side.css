@@ -32,11 +32,11 @@
 	width: 60px;
 	float: right;
 	background-color: black;
+	z-index: 110;
 }
 
 #linkContainer{
-	height: 100%;
-	padding: 0px 5px 0px 5px;
+	padding: 0 5px;
 }
 
 /*---------------------*/
@@ -102,17 +102,25 @@ box-align:center;
 /*-----SIDEBAR-BODY----*/
 /*---------------------*/
 
-.sideBody {
+#sbContainer{
 	display: none;
-	
-	
-	z-index: 100;
+	z-index: 85;
+	float: left;
+	height: 100%;
+	width: 240px;
+	background-color: rgba(0,0,0,0);
+	overflow: hidden;
+}
+
+.sideBody {
+	z-index: 90;
 	float: left;
 	height: 100%;
 	width: 240px;
 	background-color: blue;
 	color: white;
 	padding-left: 20px;
+	position: relative;
 }
 
 .sideBody h1 {
