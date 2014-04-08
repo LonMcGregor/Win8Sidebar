@@ -1,0 +1,175 @@
+/*---------------------*/
+/*-------MISC-CSS------*/
+/*---------------------*/
+.clearfix{
+	display: block;
+	width: 100%;
+	height: 100%;
+}.clearfix:after{
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+/*---------------------*/
+/*-------SIDEBAR-------*/
+/*---------------------*/
+
+#sidebar {
+	z-index: 100;
+	float: right;
+	background: black;
+}
+
+/*---------------------*/
+/*-------CONTAINER-----*/
+/*---------------------*/
+
+#majorContainer{
+	width: 60px;
+	float: right;
+	background-color: black;
+	z-index: 110;
+}
+
+#linkContainer{
+	padding: 0 5px;
+}
+
+/*---------------------*/
+/*------LINK-BOXES-----*/
+/*---------------------*/
+
+.sLink {
+
+width: 50px;
+height: 65px;
+
+
+/* Internet Explorer 10 */
+display:-ms-flexbox;
+-ms-flex-pack:center;
+-ms-flex-align:center;
+
+/* Firefox */
+display:-moz-box;
+-moz-box-pack:center;
+-moz-box-align:center;
+
+/* Safari, Chrome, and Opera */
+display:-webkit-box;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+
+/* W3C */
+display:box;
+box-pack:center;
+box-align:center;
+
+}
+
+.sLink a, .sLink a:hover, .sLink a:visited{
+	color: white;
+	text-decoration: none;
+	background-size: 100% 100%;
+	background-repeat: norepeat;
+}
+
+/*---------------------*/
+/*------LINK-ICONS-----*/
+/*---------------------*/
+
+#l1{
+	background-image:url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/search.png');
+}
+#l2{
+	background-image:url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/share.png');
+}
+#l3{
+	background-image:url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/start.png');
+}
+#l4{
+	background-image:url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/devices.png');
+}
+#l5{
+	background-image:url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/settings.png');
+}
+
+/*---------------------*/
+/*-----SIDEBAR-BODY----*/
+/*---------------------*/
+
+#sbContainer{
+	display: none;
+	z-index: 85;
+	float: left;
+	height: 100%;
+	width: 300px;
+	background-color: rgba(0,0,0,0);
+	overflow: hidden;
+}
+
+.sideBody {
+	float: left;
+	height: 100%;
+	width: 240px;
+	background-color: blue;
+	color: white;
+	padding-left: 20px;
+}
+#sb1, #sb2, #sb3, #sb4, #sb5 {
+	position: absolute;
+	right: -240px;
+}
+
+.sideBody h1 {
+	font-family: Segoe UI;
+	font-weight: normal;
+}
+
+/*---------------------*/
+/*-----SIDEBAR-ITEM----*/
+/*---------------------*/
+
+
+#sb1{z-index:75;}
+#sb2{z-index:76;}
+#sb3{z-index:77;}
+#sb4{z-index:78;}
+#sb5{z-index:79;}
+
+#sb1 input {
+	border: none;
+	width: 80%;
+	padding: 5px;
+	font-size: 16px;
+}
+.shareItem{
+	margin-top: 9px;
+	width: 80%;
+}
+#sb2 a .shareItem {
+	font-family: Segoe UI;
+	font-weight: normal;
+	width: 80%;
+	height: 25px;
+	padding: 5px;
+	font-size: 16px;
+}
+#sb2 a, #sb2 a:hover, #sb2 a:visited {
+	text-decoration: none;
+}
+#sb2 a .shareItem:hover {
+	background-color: #f33;
+}
+a .shareItem, a .shareItem:hover, a .shareItem:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.shareText { 
+	text-decoration: none;
+}
