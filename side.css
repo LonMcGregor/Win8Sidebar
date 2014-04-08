@@ -107,20 +107,22 @@ box-align:center;
 	z-index: 85;
 	float: left;
 	height: 100%;
-	width: 240px;
+	width: 300px;
 	background-color: rgba(0,0,0,0);
 	overflow: hidden;
 }
 
 .sideBody {
-	z-index: 90;
 	float: left;
 	height: 100%;
 	width: 240px;
 	background-color: blue;
 	color: white;
 	padding-left: 20px;
-	position: relative;
+}
+#sb1, #sb2, #sb3, #sb4, #sb5 {
+	position: absolute;
+	right: -240px;
 }
 
 .sideBody h1 {
@@ -132,6 +134,13 @@ box-align:center;
 /*-----SIDEBAR-ITEM----*/
 /*---------------------*/
 
+
+#sb1{z-index:75;}
+#sb2{z-index:76;}
+#sb3{z-index:77;}
+#sb4{z-index:78;}
+#sb5{z-index:79;}
+
 #sb1 input {
 	border: none;
 	width: 80%;
@@ -140,19 +149,27 @@ box-align:center;
 }
 .shareItem{
 	margin-top: 9px;
+	width: 80%;
 }
-#sb2 .shareItem a {
+#sb2 a .shareItem {
 	font-family: Segoe UI;
 	font-weight: normal;
-	width: 180px;
+	width: 80%;
 	height: 25px;
 	padding: 5px;
 	font-size: 16px;
 }
-#sb2 .shareItem a:hover {
+#sb2 a, #sb2 a:hover, #sb2 a:visited {
+	text-decoration: none;
+}
+#sb2 a .shareItem:hover {
 	background-color: #f33;
 }
-.shareItem a, .shareItem a:hover, .shareItem a:visited {
+a .shareItem, a .shareItem:hover, a .shareItem:visited {
 	color: white;
+	text-decoration: none;
+}
+
+.shareText { 
 	text-decoration: none;
 }

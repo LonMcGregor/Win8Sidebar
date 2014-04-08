@@ -2,8 +2,13 @@
 <html>
 <head>
 <link href="main.css" type="text/css" rel="stylesheet" />
+<title>Test Page</title>
 </head>
-<body onresize="setSize()" onload="setSize()">
+<body onresize="setSize()" onload="setSize(); showSideBody(3);">
+<h1 id="1">This is a sample web page.</h1>
+<h2 id="2">This is sample text on the page.</h2>
+
+
 <div id="sidebar">
 	<div id="majorContainer">
 		<div id="linkContainer">
@@ -20,100 +25,33 @@
 		</div>
 	</div>
 	<div id="sbContainer">
-		<div id="sb1" class="sideBody">
+		<div id="sb1" class="sideBody" toggle="0">
 			<h1>Search</h1>
 			<div id="searching">
 				<input id="searchbox" placeholder="Search..." onkeydown="doSearch(event)"></input>
 			</div>
 		</div>
-		<div id="sb2" class="sideBody">
+		<div id="sb2" class="sideBody" toggle="0">
 			<h1>Share</h1>
 			<div id="shareList">
-				<div id="shareTwitter" class="shareItem">
-					<a href="#" onclick="window.location='https://twitter.com/intent/tweet?text='+window.location" class="twitter-share-button">Share on Twitter</a>
-				</div>
-				<div id="shareReddit" class="shareItem">
-					<a href="#" onclick="window.location='http://www.reddit.com/submit?title='+window.title+'&url='+window.location" class="twitter-share-button">Share on Reddit</a>
-				</div>
+				<a href="#" onclick="window.location='https://twitter.com/intent/tweet?text='+window.location" class="shareItem"><div id="shareTwitter" class="shareItem shareText">Share on Twitter</div></a>
+				<a href="#" onclick="window.location='http://www.reddit.com/submit?title='+window.title+'&url='+window.location" class="twitter-share-button"><div id="shareReddit" class="shareItem shareText">Share on Reddit</div></a>
 			</div>
 		</div>
-		<div id="sb3" class="sideBody">
+		<div id="sb3" class="sideBody" toggle="0">
 			<h1>Site</h1>
 		</div>
-		<div id="sb4" class="sideBody">
+		<div id="sb4" class="sideBody" toggle="0">
 			<h1>Devices(?)</h1>
 		</div>
-		<div id="sb5" class="sideBody">
+		<div id="sb5" class="sideBody" toggle="0">
 			<h1>Settings</h1>
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-
-function setSize(){
-	var h = window.innerHeight;
-	sidebarDims(h);
-	sidebarAligns(h);
-}
-
-function sidebarDims(h){
-	var items = ["sidebar", "majorContainer", "sbContainer"];
-	for (var i = 0; i < 3; i++){
-		document.getElementById(items[i]).style.height=(""+h+"px");
-		
-		document.getElementById(items[i]).style.position="absolute";
-		document.getElementById(items[i]).style.right="0px";
-		document.getElementById(items[i]).style.top="0px";
-	}
-}
-function sidebarAligns(h){
-	document.getElementById('linkContainer').style.position="relative";
-	
-	var containerHeight = document.getElementById('linkContainer').clientHeight;
-	
-	var loc = ((h/2)-containerHeight/2);
-	document.getElementById('linkContainer').style.top=(""+loc+"px");
-}
-
-
-function showSideBody(i){
-	var toggle = document.getElementById('sb'+i).style.display;
-
-	for(var j = 1; j < 6; j++){
-		document.getElementById('sb'+j).style.display="none";
-	}
-
-	if (toggle==="none"){
-		document.getElementById('sbContainer').style.display="block";
-		document.getElementById('sb'+i).style.display="block";
-		if(i === 3){moveElement(-240)};
-	} else {
-		document.getElementById('sbContainer').style.display="none";
-		document.getElementById('sb'+i).style.display="none";
-	}
-}
-
-function doSearch(event){
-	var keyCode =  ('which' in event) ? event.which : event.keyCode;
-	if (keyCode===13){
-		window.location="http://duckduckgo.com/?q="+document.getElementById('searchbox').value;
-	}
-}
-
-function moveElement(r){
-	
-	if (r < 0){
-		
-	} else {
-		document.getElementById(sb3).style.right=r;
-		setTimeout(function() {moveElement(r+20);}, 100);
-	}
-}
-
-</script>
 <script type="text/javascript" src="thing.js"></script>
 
-<h1 id="1">This is a sample web page.</h1>
-<h2 id="2">This is sample text on the page.</h2>
+
+
 </body>
 </html>
