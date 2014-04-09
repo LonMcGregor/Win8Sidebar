@@ -4,7 +4,7 @@
 <link href="main.css" type="text/css" rel="stylesheet" />
 <title>Test Page</title>
 </head>
-<body onresize="setSize()" onload="setSize(); showSideBody(3);">
+<body>
 <h1 id="1">This is a sample web page.</h1>
 <h2 id="2">This is sample text on the page.</h2>
 
@@ -33,13 +33,23 @@
 		</div>
 		<div id="sb2" class="sideBody" toggle="0">
 			<h1>Share</h1>
-			<div id="shareList">
-				<a href="#" onclick="window.location='https://twitter.com/intent/tweet?text='+window.location" class="shareItem"><div id="shareTwitter" class="shareItem shareText">Share on Twitter</div></a>
-				<a href="#" onclick="window.location='http://www.reddit.com/submit?title='+window.title+'&url='+window.location" class="twitter-share-button"><div id="shareReddit" class="shareItem shareText">Share on Reddit</div></a>
-			</div>
+			<ul id="shareList">
+				<a href="#" onclick="window.location='https://twitter.com/intent/tweet?text='+window.location" class="shareItem"><li id="shareTwitter" class="shareItem shareText">Share on Twitter</li></a>
+				<a href="#" onclick="window.location='http://www.reddit.com/submit?title='+window.title+'&url='+window.location" class="twitter-share-button"><li id="shareReddit" class="shareItem shareText">Share on Reddit</li></a>
+			</ul>
 		</div>
 		<div id="sb3" class="sideBody" toggle="0">
 			<h1>Site</h1>
+			<ul>
+				<li>This is a paragraph of text describing the website.</li>
+				<li>This is another line of text followed by a blank line.</li>
+				<li><br /></li>
+				<li>These are some useful links:</li>
+				<a href="#" ><li id="sb3Link1" class="shareItem shareText">Sub-Site 1</li></a>
+				<a href="#" ><li id="sb3Link2" class="shareItem shareText">Sub-Site 2</li></a>
+				<a href="#" ><li id="sb3Link3" class="shareItem shareText">Me on the web</li></a>
+			</ul>
+			<h5>Sidebar information:</h5><a href="http://github.com/LonMcgregor/Win8Sidebar" ><li id="sb3Link3" class="shareItem shareText">Github</li></a>
 		</div>
 		<div id="sb4" class="sideBody" toggle="0">
 			<h1>Devices(?)</h1>

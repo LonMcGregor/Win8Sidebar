@@ -151,7 +151,19 @@ box-align:center;
 	margin-top: 9px;
 	width: 80%;
 }
-#sb2 a .shareItem {
+
+#sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#sidebar ul li {
+	list-style: none;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#sidebar a .shareItem, #sidebar ul li {
 	font-family: Segoe UI;
 	font-weight: normal;
 	width: 80%;
@@ -159,10 +171,10 @@ box-align:center;
 	padding: 5px;
 	font-size: 16px;
 }
-#sb2 a, #sb2 a:hover, #sb2 a:visited {
+#sidebar a, #sidebar a:hover, #sidebar a:visited {
 	text-decoration: none;
 }
-#sb2 a .shareItem:hover {
+#sidebar a .shareItem:hover {
 	background-color: #f33;
 }
 a .shareItem, a .shareItem:hover, a .shareItem:visited {

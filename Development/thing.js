@@ -1,23 +1,35 @@
+function testCSS(){
 var headTag = document.getElementsByTagName("head")[0];
 var cssNode = document.createElement('link');
 cssNode.type = 'text/css';
 cssNode.rel = 'stylesheet';
 cssNode.href = 'side.css';
 headTag.appendChild(cssNode);
+}
 
+
+function testInject(){
 var bodyTag = document.getElementsByTagName("body")[0];
 var sidebar = document.createElement('div');
 sidebar.id = 'sidebarX';
-var htmlContent = 'Sidebar Injection Area';
+var htmlContent = 'Sidebar Injection Completed';
 sidebar.innerHTML = htmlContent;
 bodyTag.appendChild(sidebar);
-
+}
 
 
 function setSize(){
 	var h = window.innerHeight;
 	sidebarDims(h);
 	sidebarAligns(h);
+}
+
+function onload(){
+	window.addEventListener("resize", function(){setSize();}, true);
+	setSize(); 
+	showSideBody(3);
+	testCSS();
+	testInject();
 }
 
 function sidebarDims(h){
@@ -30,6 +42,8 @@ function sidebarDims(h){
 		document.getElementById(items[i]).style.top="0px";
 	}
 }
+
+
 function sidebarAligns(h){
 	document.getElementById('linkContainer').style.position="relative";
 	
@@ -55,6 +69,7 @@ function showSideBody(i){
 		document.getElementById('sbContainer').style.display="none";
 	}
 }
+
 
 function moveElementIn(i){
 	setTimeout(function() {
@@ -85,6 +100,7 @@ function moveElementIn(i){
 	document.getElementById('sb'+i).toggle = 0;
 }
 
+
 function moveElementOut(i){
 	document.getElementById('sb'+i).toggle = 1;
 	
@@ -114,6 +130,7 @@ function moveElementOut(i){
 	}, 400);
 }
 
+
 function doSearch(event){
 	var keyCode =  ('which' in event) ? event.which : event.keyCode;
 	if (keyCode===13){
@@ -122,3 +139,4 @@ function doSearch(event){
 }
 
 
+window.onload=onload();
