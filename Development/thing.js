@@ -1,4 +1,4 @@
-function testCSS(){
+function testCSS(str){
 var headTag = document.getElementsByTagName("head")[0];
 var cssNode = document.createElement('link');
 cssNode.type = 'text/css';
@@ -24,13 +24,15 @@ function setSize(){
 	sidebarAligns(h);
 }
 
+
 function onload(){
+	testInject();
 	window.addEventListener("resize", function(){setSize();}, true);
 	setSize(); 
 	showSideBody(3);
-	testCSS();
-	testInject();
+	testCSS("");
 }
+
 
 function sidebarDims(h){
 	var items = ["sidebar", "majorContainer", "sbContainer"];
@@ -62,72 +64,24 @@ function showSideBody(i){
 	}
 
 	if (toggle===0){
-		document.getElementById('sbContainer').style.display="block";
 		moveElementOut(i);
 	} else {
 		moveElementIn(i);
-		document.getElementById('sbContainer').style.display="none";
 	}
 }
 
 
 function moveElementIn(i){
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='40px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='0px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-40px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-80px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-120px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-160px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-200px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-240px';
-	}, 400);
-
+	document.getElementById('sb'+i).className =
+		document.getElementById('sb'+i).className.replace
+			( /(?:^|\s)out(?!\S)/g , '' );
 	document.getElementById('sb'+i).toggle = 0;
 }
 
 
 function moveElementOut(i){
 	document.getElementById('sb'+i).toggle = 1;
-	
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-240px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-200px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-160px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-120px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-80px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='-40px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='0px';
-	}, 400);
-	setTimeout(function() {
-		document.getElementById('sb'+i).style.right='40px';
-	}, 400);
+	document.getElementById('sb'+i).className += " out";
 }
 
 

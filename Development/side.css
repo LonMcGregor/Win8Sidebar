@@ -6,7 +6,7 @@
 	width: 100%;
 	height: 100%;
 }.clearfix:after{
-	content: ".";
+	content: `.`;
 	display: block;
 	clear: both;
 	visibility: hidden;
@@ -31,12 +31,31 @@
 #majorContainer{
 	width: 60px;
 	float: right;
-	background-color: black;
+	background-color: none;
 	z-index: 110;
+	overflow: hidden;
+	-webkit-transition:background-color 0.5s ease;
+	transition: background-color 0.5s ease;
+}
+#majorContainer:hover{
+	background-color: black;
+	-webkit-transition:background-color 0.5s ease;
+	transition: background-color 0.5s ease;
 }
 
 #linkContainer{
 	padding: 0 5px;
+	position: relative;
+	right: -56px;
+	-webkit-transition:width 0.5s ease;
+	transition: width 0.5s ease;
+}
+
+#linkContainer:hover {
+	position: relative;
+	right: 0px;
+	-webkit-transition: right 0.5s ease;
+	transition: right 0.5s ease;
 }
 
 /*---------------------*/
@@ -103,7 +122,8 @@ box-align:center;
 /*---------------------*/
 
 #sbContainer{
-	display: none;
+	/*display: none;*/
+	display:block;
 	z-index: 85;
 	float: left;
 	height: 100%;
@@ -115,17 +135,25 @@ box-align:center;
 .sideBody {
 	float: left;
 	height: 100%;
-	width: 240px;
+	width: 260px;
 	background-color: blue;
 	color: white;
 	padding-left: 20px;
 }
 #sb1, #sb2, #sb3, #sb4, #sb5 {
 	position: absolute;
-	right: -240px;
+	right: -321px;
+	-webkit-transition: right 0.5s ease;
+	transition: right 0.5s ease;
+}
+#sb1.out, #sb2.out, #sb3.out, #sb4.out, #sb5.out {
+	position: absolute;
+	right: 0px;
+	-webkit-transition: right 0.5s ease;
+	transition: right 0.5s ease;
 }
 
-.sideBody h1 {
+.sideBody h1, .sideBody h2, .sideBody h3, .sideBody h4, .sideBody h5 {
 	font-family: Segoe UI;
 	font-weight: normal;
 }
@@ -149,7 +177,7 @@ box-align:center;
 }
 .shareItem{
 	margin-top: 9px;
-	width: 80%;
+	width: 100%;
 }
 
 #sidebar ul {
@@ -163,10 +191,10 @@ box-align:center;
 	margin-bottom: 5px;
 }
 
-#sidebar a .shareItem, #sidebar ul li {
+#sidebar a .shareItem, #sidebar ul li, #sidebar p {
 	font-family: Segoe UI;
 	font-weight: normal;
-	width: 80%;
+	width: 240px;
 	height: 25px;
 	padding: 5px;
 	font-size: 16px;
