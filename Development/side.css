@@ -6,7 +6,7 @@
 	width: 100%;
 	height: 100%;
 }.clearfix:after{
-	content: `.`;
+	content: '.';
 	display: block;
 	clear: both;
 	visibility: hidden;
@@ -46,7 +46,7 @@
 #linkContainer{
 	padding: 0 5px;
 	position: relative;
-	right: -56px;
+	right: -50px;
 	-webkit-transition:width 0.5s ease;
 	transition: width 0.5s ease;
 }
@@ -63,31 +63,20 @@
 /*---------------------*/
 
 .sLink {
-
-width: 50px;
-height: 65px;
-
-
-/* Internet Explorer 10 */
-display:-ms-flexbox;
--ms-flex-pack:center;
--ms-flex-align:center;
-
-/* Firefox */
-display:-moz-box;
--moz-box-pack:center;
--moz-box-align:center;
-
-/* Safari, Chrome, and Opera */
-display:-webkit-box;
--webkit-box-pack:center;
--webkit-box-align:center;
-
-/* W3C */
-display:box;
-box-pack:center;
-box-align:center;
-
+	width: 50px;
+	height: 65px;
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	display:box;
+	box-pack:center;
+	box-align:center;
 }
 
 .sLink a, .sLink a:hover, .sLink a:visited{
@@ -153,10 +142,16 @@ box-align:center;
 	transition: right 0.5s ease;
 }
 
-.sideBody h1, .sideBody h2, .sideBody h3, .sideBody h4, .sideBody h5 {
+.sideBody .sideHead, .sideBody .sideHead, .sideBody .sideHead, .sideBody .sideHead, .sideBody .sideHead {
 	font-family: Segoe UI;
 	font-weight: normal;
+	margin: 5px;
 }
+.sideHead1{font-size:32px;}
+.sideHead2{font-size:28px;}
+.sideHead3{font-size:24px;}
+.sideHead4{font-size:20px;}
+.sideHead5{font-size:16px;}
 
 /*---------------------*/
 /*-----SIDEBAR-ITEM----*/
