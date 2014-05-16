@@ -1,210 +1,210 @@
-/*---------------------*/
-/*-------MISC-CSS------*/
-/*---------------------*/
-.clearfix{
-	display: block;
-	width: 100%;
-	height: 100%;
-}.clearfix:after{
-	content: '.';
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
+#METROsidebar {
+    z-index: 100;
+    float: right;
+    background: black;
 }
 
-/*---------------------*/
-/*-------SIDEBAR-------*/
-/*---------------------*/
-
-#sidebar {
-	z-index: 100;
-	float: right;
-	background: black;
+#METROsidebar #majorContainer {
+    width: 60px;
+    float: right;
+    background-color: none;
+    z-index: 110;
+    overflow: hidden;
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
-/*---------------------*/
-/*-------CONTAINER-----*/
-/*---------------------*/
-
-#majorContainer{
-	width: 60px;
-	float: right;
-	background-color: none;
-	z-index: 110;
-	overflow: hidden;
-	-webkit-transition:background-color 0.5s ease;
-	transition: background-color 0.5s ease;
-}
-#majorContainer:hover{
-	background-color: black;
-	-webkit-transition:background-color 0.5s ease;
-	transition: background-color 0.5s ease;
+#METROsidebar #majorContainer:hover {
+    background-color: black;
+    -webkit-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
-#linkContainer{
-	padding: 0 5px;
-	position: relative;
-	right: -50px;
-	-webkit-transition:width 0.5s ease;
-	transition: width 0.5s ease;
+#METROsidebar #linkContainer {
+    padding: 0 5px;
+    position: relative;
+    right: -40px;
+    -webkit-transition: width 0.5s ease;
+    transition: width 0.5s ease;
 }
 
-#linkContainer:hover {
-	position: relative;
-	right: 0px;
-	-webkit-transition: right 0.5s ease;
-	transition: right 0.5s ease;
+#METROsidebar #linkContainer:hover {
+    position: relative;
+    right: 0px;
+    -webkit-transition: right 0.5s ease;
+    transition: right 0.5s ease;
 }
 
-/*---------------------*/
-/*------LINK-BOXES-----*/
-/*---------------------*/
-
-.sLink {
-	width: 50px;
-	height: 65px;
-	display:-ms-flexbox;
-	-ms-flex-pack:center;
-	-ms-flex-align:center;
-	display:-moz-box;
-	-moz-box-pack:center;
-	-moz-box-align:center;
-	display:-webkit-box;
-	-webkit-box-pack:center;
-	-webkit-box-align:center;
-	display:box;
-	box-pack:center;
-	box-align:center;
+#METROsidebar .sLink {
+    width: 50px;
+    height: 65px;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    display: -moz-box;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: box;
+    box-pack: center;
+    box-align: center;
 }
 
-.sLink a, .sLink a:hover, .sLink a:visited{
-	color: white;
-	text-decoration: none;
-	background-size: 100% 100%;
-	background-repeat: norepeat;
+#METROsidebar .sLink a, #METROsidebar .sLink a:hover, #METROsidebar .sLink a:visited {
+    color: white;
+    text-decoration: none;
+    background-size: 100% 100%;
+    background-repeat: norepeat;
 }
 
-/*---------------------*/
-/*------LINK-ICONS-----*/
-/*---------------------*/
-
-#l1{
-	background-image:url('search.png');
-}
-#l2{
-	background-image:url('share.png');
-}
-#l3{
-	background-image:url('start.png');
-}
-#l4{
-	background-image:url('devices.png');
-}
-#l5{
-	background-image:url('settings.png');
+#METROsidebar #l1 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/search.png');
 }
 
-/*---------------------*/
-/*-----SIDEBAR-BODY----*/
-/*---------------------*/
-
-#sbContainer{
-	/*display: none;*/
-	display:block;
-	z-index: 85;
-	float: left;
-	height: 100%;
-	width: 300px;
-	background-color: rgba(0,0,0,0);
-	overflow: hidden;
+#METROsidebar #l2 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/share.png');
 }
 
-.sideBody {
-	float: left;
-	height: 100%;
-	width: 260px;
-	background-color: blue;
-	color: white;
-	padding-left: 20px;
-}
-#sb1, #sb2, #sb3, #sb4, #sb5 {
-	position: absolute;
-	right: -321px;
-	-webkit-transition: right 0.5s ease;
-	transition: right 0.5s ease;
-}
-#sb1.out, #sb2.out, #sb3.out, #sb4.out, #sb5.out {
-	position: absolute;
-	right: 0px;
-	-webkit-transition: right 0.5s ease;
-	transition: right 0.5s ease;
+#METROsidebar #l3 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/start.png');
 }
 
-.sideBody .sideHead, .sideBody .sideHead, .sideBody .sideHead, .sideBody .sideHead, .sideBody .sideHead {
-	font-family: Segoe UI;
-	font-weight: normal;
-	margin: 5px;
-}
-.sideHead1{font-size:32px;}
-.sideHead2{font-size:28px;}
-.sideHead3{font-size:24px;}
-.sideHead4{font-size:20px;}
-.sideHead5{font-size:16px;}
-
-/*---------------------*/
-/*-----SIDEBAR-ITEM----*/
-/*---------------------*/
-
-
-#sb1{z-index:75;}
-#sb2{z-index:76;}
-#sb3{z-index:77;}
-#sb4{z-index:78;}
-#sb5{z-index:79;}
-
-#sb1 input {
-	border: none;
-	width: 80%;
-	padding: 5px;
-	font-size: 16px;
-}
-.shareItem{
-	margin-top: 9px;
-	width: 100%;
+#METROsidebar #l4 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/devices.png');
 }
 
-#sidebar ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-#sidebar ul li {
-	list-style: none;
-	margin-top: 5px;
-	margin-bottom: 5px;
+#METROsidebar #l5 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/settings.png');
 }
 
-#sidebar a .shareItem, #sidebar ul li, #sidebar p {
-	font-family: Segoe UI;
-	font-weight: normal;
-	width: 240px;
-	height: 25px;
-	padding: 5px;
-	font-size: 16px;
-}
-#sidebar a, #sidebar a:hover, #sidebar a:visited {
-	text-decoration: none;
-}
-#sidebar a .shareItem:hover {
-	background-color: #f33;
-}
-a .shareItem, a .shareItem:hover, a .shareItem:visited {
-	color: white;
-	text-decoration: none;
+#METROsidebar #sbContainer {
+ /*display: none;*/
+    display: block;
+    z-index: 85;
+    float: left;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0,0,0,0);
+    overflow: hidden;
 }
 
-.shareText { 
-	text-decoration: none;
+#METROsidebar .sideBody {
+    float: left;
+    height: 100%;
+    width: 260px;
+    background-color: blue;
+    color: white;
+    padding-left: 20px;
+}
+
+#METROsidebar #sb1, #METROsidebar #sb2, #METROsidebar #sb3, #METROsidebar #sb4, #METROsidebar #sb5 {
+    position: absolute;
+    right: -321px;
+    -webkit-transition: right 0.5s ease;
+    transition: right 0.5s ease;
+}
+
+#METROsidebar #sb1.out, #METROsidebar #sb2.out, #METROsidebar #sb3.out, #METROsidebar #sb4.out, #METROsidebar #sb5.out {
+    position: absolute;
+    right: 0px;
+    -webkit-transition: right 0.5s ease;
+    transition: right 0.5s ease;
+}
+
+#METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead,#METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead {
+    font-family: Segoe UI;
+    font-weight: normal;
+    margin: 5px;
+}
+
+#METROsidebar .sideHead1 {
+    font-size: 32px;
+}
+
+#METROsidebar .sideHead2 {
+    font-size: 28px;
+}
+
+#METROsidebar .sideHead3 {
+    font-size: 24px;
+}
+
+#METROsidebar .sideHead4 {
+    font-size: 20px;
+}
+
+#METROsidebar .sideHead5 {
+    font-size: 16px;
+}
+
+#METROsidebar #sb1 {
+    z-index: 75;
+}
+
+#METROsidebar #sb2 {
+    z-index: 76;
+}
+
+#METROsidebar #sb3 {
+    z-index: 77;
+}
+
+#METROsidebar #sb4 {
+    z-index: 78;
+}
+
+#METROsidebar #sb5 {
+    z-index: 79;
+}
+
+#METROsidebar #sb1 input {
+    border: none;
+    width: 80%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#METROsidebar .shareItem {
+    margin-top: 9px;
+    width: 100%;
+}
+
+#METROsidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#METROsidebar ul li {
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#METROsidebar a .shareItem, #METROsidebar ul li, #METROsidebar p {
+    font-family: Segoe UI;
+    font-weight: normal;
+    width: 240px;
+    height: 25px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#METROsidebar a, #METROsidebar a:hover, #METROsidebar a:visited {
+    text-decoration: none;
+}
+
+#METROsidebar a .shareItem:hover {
+    background-color: #f33;
+}
+
+#METROsidebar a .shareItem, #METROsidebar a .shareItem:hover, #METROsidebar a .shareItem:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#METROsidebar .shareText {
+    text-decoration: none;
 }
