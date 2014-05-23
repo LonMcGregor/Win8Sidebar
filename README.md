@@ -10,7 +10,7 @@ To further customize it, see below</p>
 
 
 <h1>CUSTOMIZATION</h1>
-<p>The only two parts you need to modify in any way are the functions named "sidebarInnerData" and "doSearch". </p>
+<p>The only two parts you need to modify in any way for basic cusotmization are the functions named "sidebarInnerData" and "doSearch". </p>
 
 <h2>sideBarInnerData</h2>
 <p>This contains the content that will be injected into each of the sidebar's menus.</p>
@@ -20,9 +20,14 @@ Will act as the equivalent of "h3" within the menu. There are 5 of these levels 
 <p>Remember that when editing this you will need to escape the HTML using "\" at the end of each line</p>
 
 <h2>doSearch</h2>
-<p>All you need to do here is change the url to point to your search page</p>
+<p>All you need to do here is change the url to point to your site's search page</p>
 
 <h2>Further Customization</h2>
-<p>The icons used on the sidebar can be customized, just ctrl+f for "raw.github.com", and change the images that are listed as appropriate.<br/>
-The entire sidebar can be changed any way you want, if you want to though, I would reccoment looking into the development folder and using the <em>pretty</em> code, which will be easier to read.
+<p>The icons used on the sidebar can be customized, change the target images in the imageCSS() function.<br/>
+The entire sidebar can be changed any way you want, if you want to though, I would reccomend looking into the development folder and using the <em>pretty</em> code, which will be easier to read.
 
+
+<h1>KNOWN ISSUES</h1>
+<ul>
+<li>The Search button requires a return key press, there is no button.</li>
+</ul>

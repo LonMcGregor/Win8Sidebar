@@ -1,3 +1,24 @@
+
+#METROsidebar #l1 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/search.png');
+}
+
+#METROsidebar #l2 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/share.png');
+}
+
+#METROsidebar #l3 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/start.png');
+}
+
+#METROsidebar #l4 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/devices.png');
+}
+
+#METROsidebar #l5 {
+    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/settings.png');
+}
+
 #METROsidebar {
     z-index: 100;
     float: right;
@@ -10,7 +31,7 @@
     background-color: none;
     z-index: 110;
     overflow: hidden;
-    -webkit-transition: background-color 0.5s ease;
+   -webkit-transition: background-color 0.5s ease; 
     transition: background-color 0.5s ease;
 }
 
@@ -20,19 +41,27 @@
     transition: background-color 0.5s ease;
 }
 
-#METROsidebar #linkContainer {
+#METROsidebar #linkContainer .bnoContainer {
     padding: 0 5px;
     position: relative;
     right: -40px;
-    -webkit-transition: width 0.5s ease;
-    transition: width 0.5s ease;
 }
 
-#METROsidebar #linkContainer:hover {
+#METROsidebar #linkContainer:hover .bnoContainer {
     position: relative;
     right: 0px;
-    -webkit-transition: right 0.5s ease;
-    transition: right 0.5s ease;
+}
+#METROsidebar #majorContainer .bnoContainer.bno1, #METROsidebar #majorContainer .bnoContainer.bno1:hover {
+	-webkit-transition: right 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
+}
+#METROsidebar #majorContainer .bnoContainer.bno2, #METROsidebar #majorContainer .bnoContainer.bno2:hover {
+	-webkit-transition: right 0.5s ease-in-out;
+    transition: right 0.5s ease-in-out;
+}
+#METROsidebar #majorContainer .bnoContainer.bno3, #METROsidebar #majorContainer .bnoContainer.bno3:hover {
+	-webkit-transition: right 0.7s ease-in-out;
+    transition: right 0.7s ease-in-out;
 }
 
 #METROsidebar .sLink {
@@ -57,26 +86,6 @@
     text-decoration: none;
     background-size: 100% 100%;
     background-repeat: norepeat;
-}
-
-#METROsidebar #l1 {
-    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/search.png');
-}
-
-#METROsidebar #l2 {
-    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/share.png');
-}
-
-#METROsidebar #l3 {
-    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/start.png');
-}
-
-#METROsidebar #l4 {
-    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/devices.png');
-}
-
-#METROsidebar #l5 {
-    background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/settings.png');
 }
 
 #METROsidebar #sbContainer {

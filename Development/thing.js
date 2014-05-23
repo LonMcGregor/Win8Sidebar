@@ -11,21 +11,31 @@ var sidebar = document.createElement('div');
 sidebar.id = 'METROsidebar';
 var htmlContent = ' <div id="majorContainer">\
         <div id="linkContainer">\
-            <a href="#search" onclick="showSideBody(1)">\
-                <div id="l1" class="sLink clearfix" bn="1"></div>\
-            </a>\
-            <a href="#share" onclick="showSideBody(2)">\
-                <div id="l2" class="sLink clearfix" bn="2"></div>\
-            </a>\
-            <a href="#start" onclick="showSideBody(3)">\
-                <div id="l3" class="sLink clearfix" bn="3"></div>\
-            </a>\
-            <a href="#devices" onclick="showSideBody(4)">\
-                <div id="l4" class="sLink clearfix" bn="4"></div>\
-            </a>\
-            <a href="#settings" onclick="showSideBody(5)">\
-                <div id="l5" class="sLink clearfix" bn="5"></div>\
-            </a>\
+            <div class="bnoContainer bno3">\
+                <a href="#search" onclick="showSideBody(1)">\
+                    <div id="l1" class="sLink clearfix" bn="1"></div>\
+                </a>\
+			</div>\
+            <div class="bnoContainer bno2">\
+				<a href="#share" onclick="showSideBody(2)">\
+					<div id="l2" class="sLink clearfix" bn="2"></div>\
+				</a>\
+			</div>\
+            <div class="bnoContainer bno1">\
+				<a href="#start" onclick="showSideBody(3)">\
+					<div id="l3" class="sLink clearfix" bn="3"></div>\
+				</a>\
+			</div>\
+            <div class="bnoContainer bno2"">\
+				<a href="#devices" onclick="showSideBody(4)">\
+					<div id="l4" class="sLink clearfix" bn="4"></div>\
+				</a>\
+			</div>\
+            <div class="bnoContainer bno3">\
+				<a href="#settings" onclick="showSideBody(5)">\
+					<div id="l5" class="sLink clearfix" bn="5"></div>\
+				</a>\
+			</div>\
         </div>\
     </div>\
     <div id="sbContainer">\
@@ -42,7 +52,7 @@ var htmlContent = ' <div id="majorContainer">\
             <div id="sb3Inner"></div>\
         </div>\
         <div id="sb4" class="sideBody" toggle="0">\
-            <div class="sideHead sideHead1">Devices(?)</div>\
+            <div class="sideHead sideHead1">Domain</div>\
             <div id="sb4Inner"></div>\
         </div>\
         <div id="sb5" class="sideBody" toggle="0">\
@@ -52,6 +62,14 @@ var htmlContent = ' <div id="majorContainer">\
     </div>';
 sidebar.innerHTML = htmlContent;
 bodyTag.appendChild(sidebar);
+}
+
+function imageCSS(){
+	testCSS("#METROsidebar #l1 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/search.png'); }  #METROsidebar #l2 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/share.png'); }  #METROsidebar #l3 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/start.png'); }  #METROsidebar #l4 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/devices.png'); }  #METROsidebar #l5 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/settings.png'); }  ");
+}
+
+function staticCSS(){
+	testCSS("#METROsidebar { z-index: 100; float: right; background: black; }  #METROsidebar #majorContainer { width: 60px; float: right; background-color: none; z-index: 110; overflow: hidden; -webkit-transition: background-color 0.5s ease; transition: background-color 0.5s ease; }  #METROsidebar #majorContainer:hover { background-color: black; -webkit-transition: background-color 0.5s ease; transition: background-color 0.5s ease; }  #METROsidebar #linkContainer .bnoContainer { padding: 0 5px; position: relative; right: -40px; }  #METROsidebar #linkContainer:hover .bnoContainer { position: relative; right: 0px; } #METROsidebar #majorContainer .bnoContainer.bno1, #METROsidebar #majorContainer .bnoContainer.bno1:hover { -webkit-transition: right 0.3s ease-in-out; transition: right 0.3s ease-in-out; } #METROsidebar #majorContainer .bnoContainer.bno2, #METROsidebar #majorContainer .bnoContainer.bno2:hover { -webkit-transition: right 0.5s ease-in-out; transition: right 0.5s ease-in-out; } #METROsidebar #majorContainer .bnoContainer.bno3, #METROsidebar #majorContainer .bnoContainer.bno3:hover { -webkit-transition: right 0.7s ease-in-out; transition: right 0.7s ease-in-out; }  #METROsidebar .sLink { width: 50px; height: 65px; display: -ms-flexbox; -ms-flex-pack: center; -ms-flex-align: center; display: -moz-box; -moz-box-pack: center; -moz-box-align: center; display: -webkit-box; -webkit-box-pack: center; -webkit-box-align: center; display: box; box-pack: center; box-align: center; }  #METROsidebar .sLink a, #METROsidebar .sLink a:hover, #METROsidebar .sLink a:visited { color: white; text-decoration: none; background-size: 100% 100%; background-repeat: norepeat; }  #METROsidebar #sbContainer { /*display: none;*/ display: block; z-index: 85; float: left; height: 100%; width: 300px; background-color: rgba(0,0,0,0); overflow: hidden; }  #METROsidebar .sideBody { float: left; height: 100%; width: 260px; background-color: blue; color: white; padding-left: 20px; }  #METROsidebar #sb1, #METROsidebar #sb2, #METROsidebar #sb3, #METROsidebar #sb4, #METROsidebar #sb5 { position: absolute; right: -321px; -webkit-transition: right 0.5s ease; transition: right 0.5s ease; }  #METROsidebar #sb1.out, #METROsidebar #sb2.out, #METROsidebar #sb3.out, #METROsidebar #sb4.out, #METROsidebar #sb5.out { position: absolute; right: 0px; -webkit-transition: right 0.5s ease; transition: right 0.5s ease; }  #METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead,#METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead { font-family: Segoe UI; font-weight: normal; margin: 5px; }  #METROsidebar .sideHead1 { font-size: 32px; }  #METROsidebar .sideHead2 { font-size: 28px; }  #METROsidebar .sideHead3 { font-size: 24px; }  #METROsidebar .sideHead4 { font-size: 20px; }  #METROsidebar .sideHead5 { font-size: 16px; }  #METROsidebar #sb1 { z-index: 75; }  #METROsidebar #sb2 { z-index: 76; }  #METROsidebar #sb3 { z-index: 77; }  #METROsidebar #sb4 { z-index: 78; }  #METROsidebar #sb5 { z-index: 79; }  #METROsidebar #sb1 input { border: none; width: 80%; padding: 5px; font-size: 16px; }  #METROsidebar .shareItem { margin-top: 9px; width: 100%; }  #METROsidebar ul { list-style: none; padding: 0; margin: 0; }  #METROsidebar ul li { list-style: none; margin-top: 5px; margin-bottom: 5px; }  #METROsidebar a .shareItem, #METROsidebar ul li, #METROsidebar p { font-family: Segoe UI; font-weight: normal; width: 240px; height: 25px; padding: 5px; font-size: 16px; }  #METROsidebar a, #METROsidebar a:hover, #METROsidebar a:visited { text-decoration: none; }  #METROsidebar a .shareItem:hover { background-color: #f33; }  #METROsidebar a .shareItem, #METROsidebar a .shareItem:hover, #METROsidebar a .shareItem:visited { color: white; text-decoration: none; }  #METROsidebar .shareText { text-decoration: none; }");
 }
 
 function sidebarInnerData(){
@@ -137,7 +155,8 @@ function sidebarInnerInject(loc, data){
 window.onload = function () {
 	testInject();
 	setSize();
-	testCSS("#METROsidebar { z-index: 100; float: right; background: black; }  #METROsidebar #majorContainer { width: 60px; float: right; background-color: none; z-index: 110; overflow: hidden; -webkit-transition: background-color 0.5s ease; transition: background-color 0.5s ease; }  #METROsidebar #majorContainer:hover { background-color: black; -webkit-transition: background-color 0.5s ease; transition: background-color 0.5s ease; }  #METROsidebar #linkContainer { padding: 0 5px; position: relative; right: -40px; -webkit-transition: width 0.5s ease; transition: width 0.5s ease; }  #METROsidebar #linkContainer:hover { position: relative; right: 0px; -webkit-transition: right 0.5s ease; transition: right 0.5s ease; }  #METROsidebar .sLink { width: 50px; height: 65px; display: -ms-flexbox; -ms-flex-pack: center; -ms-flex-align: center; display: -moz-box; -moz-box-pack: center; -moz-box-align: center; display: -webkit-box; -webkit-box-pack: center; -webkit-box-align: center; display: box; box-pack: center; box-align: center; }  #METROsidebar .sLink a, #METROsidebar .sLink a:hover, #METROsidebar .sLink a:visited { color: white; text-decoration: none; background-size: 100% 100%; background-repeat: norepeat; }  #METROsidebar #l1 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/search.png'); }  #METROsidebar #l2 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/share.png'); }  #METROsidebar #l3 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/start.png'); }  #METROsidebar #l4 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/devices.png'); }  #METROsidebar #l5 { background-image: url('https://raw.githubusercontent.com/LonMcGregor/Win8Sidebar/master/Stable/settings.png'); }  #METROsidebar #sbContainer { /*display: none;*/ display: block; z-index: 85; float: left; height: 100%; width: 300px; background-color: rgba(0,0,0,0); overflow: hidden; }  #METROsidebar .sideBody { float: left; height: 100%; width: 260px; background-color: blue; color: white; padding-left: 20px; }  #METROsidebar #sb1, #METROsidebar #sb2, #METROsidebar #sb3, #METROsidebar #sb4, #METROsidebar #sb5 { position: absolute; right: -321px; -webkit-transition: right 0.5s ease; transition: right 0.5s ease; }  #METROsidebar #sb1.out, #METROsidebar #sb2.out, #METROsidebar #sb3.out, #METROsidebar #sb4.out, #METROsidebar #sb5.out { position: absolute; right: 0px; -webkit-transition: right 0.5s ease; transition: right 0.5s ease; }  #METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead,#METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead, #METROsidebar .sideBody .sideHead { font-family: Segoe UI; font-weight: normal; margin: 5px; }  #METROsidebar .sideHead1 { font-size: 32px; }  #METROsidebar .sideHead2 { font-size: 28px; }  #METROsidebar .sideHead3 { font-size: 24px; }  #METROsidebar .sideHead4 { font-size: 20px; }  #METROsidebar .sideHead5 { font-size: 16px; }  #METROsidebar #sb1 { z-index: 75; }  #METROsidebar #sb2 { z-index: 76; }  #METROsidebar #sb3 { z-index: 77; }  #METROsidebar #sb4 { z-index: 78; }  #METROsidebar #sb5 { z-index: 79; }  #METROsidebar #sb1 input { border: none; width: 80%; padding: 5px; font-size: 16px; }  #METROsidebar .shareItem { margin-top: 9px; width: 100%; }  #METROsidebar ul { list-style: none; padding: 0; margin: 0; }  #METROsidebar ul li { list-style: none; margin-top: 5px; margin-bottom: 5px; }  #METROsidebar a .shareItem, #METROsidebar ul li, #METROsidebar p { font-family: Segoe UI; font-weight: normal; width: 240px; height: 25px; padding: 5px; font-size: 16px; }  #METROsidebar a, #METROsidebar a:hover, #METROsidebar a:visited { text-decoration: none; }  #METROsidebar a .shareItem:hover { background-color: #f33; }  #METROsidebar a .shareItem, #METROsidebar a .shareItem:hover, #METROsidebar a .shareItem:visited { color: white; text-decoration: none; }  #METROsidebar .shareText { text-decoration: none; }");
+	imageCSS();
+	staticCSS();
 	window.addEventListener("resize", function () {
 		setSize();
 	}, true);
